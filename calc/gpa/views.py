@@ -13,8 +13,17 @@ def home(request):
     return render(request,"home.html")
 
 def dec(request):
-    if request.method=="POST":
-      return render(request,"clc.html",{"k":True})
+   if request.method=="POST":
+     usernm=request.POST['unm']
+     password=request.POST['pass']
+     us=auth.authenticate(username=usernm,password=password)
+     if us is not None:
+          auth.login(request,us)
+          return render(request,"clc.html",{"k":True})
+     else:
+          messages.error(request,"Invalid Login")
+          return redirect('/')
+      
     else:
      return render(request,"clc.html",{"k":False,"m":True})
 def gpc(request):
