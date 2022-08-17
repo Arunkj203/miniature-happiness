@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <p CLASS="right">
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+    </p>
+      
+    <style>
+        .right {
+            position: absolute;
+            right: 0px;
+            width: 300px;
+            padding: 0px;
+          }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: lightblue;
+            color: black;
+        }
+        
+        
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: lightblue;
+            text-shadow: 2px 2px 4px #000000;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        
+                
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #f81515;
+            display: block;
+            transition: 2s;
+            text-shadow: 2px 2px 4px #ffecec;
+            }
+        
+        
+        .sidenav a:hover {
+            width: 300px;
+            color: #2b0ae9;
+        }
+        
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .chart {
+            background-color: lightblue;
+        }
+        .pie{
+
+            background-color: lightblue;
+
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+                
+            }
+        }
+        
+       
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['SCHEMES', 'CENTRAL FUND', 'STATE FUND'],
+          ['IGNOAPS', 1000, 400],
+          ['IGNWPS', 1170, 460],
+          ['IGNDPS', 660, 1120]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'ELIGIBILITY CRITERIA',
+            subtitle: 'CENTRAL AND STATE FUND OF OF SCHEME',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    
+    
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'process per Day'],
+          ['PROCESSED',     11],
+          ['PENDING',      2],
+          ['DECLINED',  2],
+          ['PROCESSING', 2]
+        ]);
+
+
+        var options = {
+          title: 'STATUS OF FILES'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">Notification</a>
+        <a href="/show">Application</a>
+        <a href="#">Stats</a>
+        <a href="#">Logs</a>
+        <a href="#">Reports</a>
+    </div>
+    <br>
+    <br>
+
+
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <b>Smart India Hackathon</b></span><br>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    
+    <div id="columnchart_material" style="width: 400px; height: 500px"; CLASS="PIE"></div> 
+
+    <div id="piechart" style="width: 500px; height: 500px"; CLASS="CHART"></div>
+ 
+
+
+</body>
+
+</html>

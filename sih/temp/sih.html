@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width,initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href={static "one.css" }>
+        <link rel="stylesheet" href={static "css/all.min.css" }>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
+
+    </head> 
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="title">Registration Form</div>
+            <form action="">
+                <div class="user__details">
+                <div class="input__box">
+                    <span class="details">Application Number</span>
+                    <input type="number" placeholder="*****" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Name</span>
+                    <input type="text" placeholder="Name" name="" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Area</span>
+                    <input type="text" placeholder="Area" name="" required>
+                </div>    
+                <div class="input__box">
+                    <span class="details">Scheme</span>
+                    <select>
+                        <option>IGNOAPS</option>
+                        <option>IGNDPS</option>
+                        <option>IGNWPS</option>
+                    </select>
+
+                </div>
+                <div class="input__box">
+                    <span class="details">DOB</span>
+                    <input type="date" required>
+                </div>
+                <div class= "input__box">
+                    <span class="details">Phone Number</span>
+                    <input type="phone" placeholder="**********" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Aadhar Number</span>
+                    <input type="number" placeholder="************" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Gender</sapn>
+                        <select>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>             
+                <div class="input__box">
+                    <span class="details">Document Type</span>
+                    <select>
+                        <option>Aadhar</option>
+                        <option>PDS</option>
+                        <option>PWD</option>
+                        <option>Widow</option>
+                    </select>
+                </div>
+                <div class="input__box">
+                    <span class="details">Document upload</span>
+                <input type="file">
+                </div>
+                <div class="button"><br>
+                    <input type="submit" value="Register"> 
+                  </div>
+                  
+                
+ </form>
+</div>
+</div>
+</body>
+</html>
